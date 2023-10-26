@@ -92,6 +92,16 @@ namespace TestProject
             }
 
             [Test]
+            public void DeepNestedClass()
+            {
+
+                var first = NestedTestClass.Get14TimesNestedClass();
+                var second = NestedTestClass.Get14TimesNestedClass();
+
+                first.Should().BeEquivalentTo(second);
+            }
+
+            [Test]
             public void ClassWithEquals()
             {
                 var first = new TestClassWithEquals("123");
